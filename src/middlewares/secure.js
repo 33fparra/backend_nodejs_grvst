@@ -25,8 +25,18 @@ const secureMiddleware = {
     }
   }
 };
+//paso 2 desencriptacion de contrasena
+async function verificarContrasena(contrasenaIngresada, contrasenaAlmacenada) {
+  try {
+    return await bcrypt.compare(contrasenaIngresada, contrasenaAlmacenada);
+  } catch (error) {
+    console.error("Error al verificar la contraseña:", error);
+    return false;
+  }
+}
 
 module.exports = {
   generateHash,
-  secureMiddleware
+  secureMiddleware,
+  verificarContrasena
 };

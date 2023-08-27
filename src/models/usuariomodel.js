@@ -33,9 +33,9 @@ class Usuario {
           reject(error);
         } else {
           if (result.length > 0) {
-            resolve(result[0]); 
+            resolve(result[0]);
           } else {
-            resolve(null); 
+            resolve(null);
           }
         }
       });
